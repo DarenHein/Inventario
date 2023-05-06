@@ -24,6 +24,11 @@ public class Ventana extends JFrame{
     private JLabel etiqueta11; //itulo
     // etiquets de inventario 
 
+    private JLabel etiqueta12; 
+    private JLabel etiqueta13;
+    private JLabel etiqueta14; 
+    private JLabel etiqueta15;  
+
     private JButton boton; 
     private JButton boton2; 
     private JButton boton3; 
@@ -251,6 +256,12 @@ public class Ventana extends JFrame{
                campo8.setVisible(true);
                campo9.setVisible(true);
                boton5.setVisible(true);
+
+               setSize(600, 400);
+               boton4.setBounds(450, 260, 120, 20);
+               boton5.setBounds(450, 60, 120, 20);
+               boton3.setBounds(450, 190, 120, 20);
+               boton2.setBounds(450, 120, 120, 20);
             }
             
         });
@@ -260,11 +271,47 @@ public class Ventana extends JFrame{
         boton3.setBounds(450, 190, 120, 20);
         boton3.setText("Inventario");
         boton3.setVisible(false);
+        boton3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                /* 
+                 * aqui va todo el funcionamietno de la vista de las interfaces de intentario 
+                 */
+               etiqueta4.setVisible(false);
+               etiqueta5.setVisible(false);
+               etiqueta6.setVisible(false);
+               etiqueta7.setVisible(false);
+               etiqueta8.setVisible(false); 
+               etiqueta9.setVisible(false);
+               etiqueta9.setVisible(false);
+               etiqueta10.setVisible(false);
+               etiqueta11.setVisible(false);
+               campo3.setVisible(false);
+               campo4.setVisible(false);
+               campo5.setVisible(false);
+               campo6.setVisible(false);
+               campo7.setVisible(false);
+               campo8.setVisible(false); 
+               campo9.setVisible(false);
+               boton5.setVisible(false); 
+
+               setSize(700, 400);
+               boton4.setBounds(550, 260, 120, 20);
+               boton5.setBounds(550, 60, 120, 20);
+               boton3.setBounds(550, 190, 120, 20);
+               boton2.setBounds(550, 120, 120, 20);
+
+
+            }
+            
+        });
         panel.add(boton3); 
 
         boton4 = new JButton(); 
         boton4.setBounds(450, 260, 120, 20);
-        boton4.setText("Inventario");
+        boton4.setText("Sin Funcionamiento");
         boton4.setVisible(false);
         panel.add(boton4); 
 
@@ -280,6 +327,8 @@ public class Ventana extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String nombre ; 
                 nombre = campo3.getText(); 
+                // faltan los demas campos caducidad etc 
+
                 JOptionPane.showMessageDialog(null,"Gracias producto registrado \n nombre : " + nombre  );
 
                
