@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,13 +21,14 @@ public class Ventana extends JFrame{
     private JLabel etiqueta8 ; 
     private JLabel etiqueta9 ;
     private JLabel etiqueta10;  
+    private JLabel etiqueta11; //itulo
     // etiquets de inventario 
 
     private JButton boton; 
     private JButton boton2; 
     private JButton boton3; 
     private JButton boton4;
-    private JButton boton5;  
+    private JButton boton5;// boton añadir productos   
     private JTextField campo; 
     private JTextField campo2; 
     // campos añadir 
@@ -127,7 +129,12 @@ public class Ventana extends JFrame{
         etiqueta10.setBounds(40,310,120,20); 
         panel.add(etiqueta10); 
 
-
+        etiqueta11 = new JLabel(); 
+        etiqueta11.setVisible(false); 
+        etiqueta11.setText("Añadir Producto");
+        etiqueta11.setFont(new Font("arial",Font.BOLD,22)); 
+        etiqueta11.setBounds(140,10,200,20); 
+        panel.add(etiqueta11); 
 
     }
     public void campos(){
@@ -140,14 +147,15 @@ public class Ventana extends JFrame{
         panel.add(campo2); 
 
         // campos añadir 
+
         campo3 = new JTextField(); 
         campo3.setVisible(false);
-        campo3.setBounds(150, 70, 150, 20);
+        campo3.setBounds(150, 70, 150, 20);// nombre 
         panel.add(campo3);
 
         campo4 = new JTextField(); 
         campo4.setVisible(false);
-        campo4.setBounds(150, 110, 150, 20);
+        campo4.setBounds(150, 110, 150, 20);// 
         panel.add(campo4);
 
         campo5 = new JTextField(); 
@@ -155,24 +163,24 @@ public class Ventana extends JFrame{
         campo5.setBounds(150, 150, 150, 20);
         panel.add(campo5);
 
-        campo6 = new JTextField(); 
+        campo6 = new JTextField("dd-mm-aaaa"); 
         campo6.setVisible(false);
         campo6.setBounds(150, 190, 150, 20);
         panel.add(campo6);
 
-        campo7 = new JTextField(); 
+        campo7 = new JTextField("dd-mm-aaaa"); 
         campo7.setVisible(false);
         campo7.setBounds(150, 230, 150, 20);
         panel.add(campo7);
 
-        campo8 = new JTextField(); 
+        campo8 = new JTextField("$"); 
         campo8.setVisible(false);
-        campo8.setBounds(150, 270, 150, 20);
+        campo8.setBounds(150, 270, 150, 20); // precio de llegada 
         panel.add(campo8);
 
-        campo9 = new JTextField(); 
+        campo9 = new JTextField("$"); 
         campo9.setVisible(false);
-        campo9.setBounds(150, 310, 150, 20);
+        campo9.setBounds(150, 310, 150, 20);// precio al publico 
         panel.add(campo9);
 
     }
@@ -234,11 +242,15 @@ public class Ventana extends JFrame{
                etiqueta8.setVisible(true);
                etiqueta9.setVisible(true);
                etiqueta10.setVisible(true); 
+               etiqueta11.setVisible(true);
                campo3.setVisible(true);
                campo4.setVisible(true);
                campo5.setVisible(true);
                campo6.setVisible(true);
                campo7.setVisible(true);
+               campo8.setVisible(true);
+               campo9.setVisible(true);
+               boton5.setVisible(true);
             }
             
         });
@@ -255,6 +267,14 @@ public class Ventana extends JFrame{
         boton4.setText("Inventario");
         boton4.setVisible(false);
         panel.add(boton4); 
+
+        boton5 = new JButton(); 
+        boton5.setBounds(450, 60, 120, 20);
+        boton5.setText("Añadir Producto ");
+        boton5.setBackground(Color.BLUE);
+        boton5.setForeground(Color.white);
+        boton5.setVisible(false);
+        panel.add(boton5); 
 
         
 
