@@ -133,7 +133,7 @@ public class Ventana extends JFrame{
         etiqueta11.setVisible(false); 
         etiqueta11.setText("Añadir Producto");
         etiqueta11.setFont(new Font("arial",Font.BOLD,22)); 
-        etiqueta11.setBounds(140,10,200,20); 
+        etiqueta11.setBounds(160,10,200,20); 
         panel.add(etiqueta11); 
 
     }
@@ -274,6 +274,18 @@ public class Ventana extends JFrame{
         boton5.setBackground(Color.BLUE);
         boton5.setForeground(Color.white);
         boton5.setVisible(false);
+        boton5.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nombre ; 
+                nombre = campo3.getText(); 
+                JOptionPane.showMessageDialog(null,"Gracias producto registrado \n nombre : " + nombre  );
+
+               
+            }
+
+        });
         panel.add(boton5); 
 
         
