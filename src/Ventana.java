@@ -2,10 +2,14 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
-public class Ventana extends JFrame{
+public class Ventana extends JFrame implements Runnable{
+
+    @Override
+    public void run(){
+
+    }
 
     /* sistema de gestion de farmacia */
 
@@ -35,7 +39,7 @@ public class Ventana extends JFrame{
     private JButton boton4;
     private JButton boton5;// boton añadir productos   
     private JTextField campo; 
-    private JTextField campo2; 
+    private JPasswordField campo2; 
     // campos añadir 
     private JTextField campo3; 
     private JTextField campo4; 
@@ -44,9 +48,19 @@ public class Ventana extends JFrame{
     private JTextField campo7; 
     private JTextField campo8; 
     private JTextField campo9; 
-     
 
+    // campo inventario 
+    private JLabel etiqueta16; 
+    private JLabel etiqueta17;  
+    private JLabel etiqueta18;
+    private JLabel etiqueta19; 
+    private JButton  boton6; // borrar seleccion 
+    private JButton boton7; // modificar entradad 
+    private JButton boton8; 
+     
     public Ventana(){
+        Thread obj = new Thread(this); 
+        obj.start();
         this.setSize(600, 400);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -60,8 +74,7 @@ public class Ventana extends JFrame{
         this.getContentPane().add(panel);
         etiquetas(); 
         botones(); 
-        campos(); 
-        
+        campos();   
     }
     public void etiquetas(){
 
@@ -141,13 +154,21 @@ public class Ventana extends JFrame{
         etiqueta11.setBounds(160,10,200,20); 
         panel.add(etiqueta11); 
 
+        // campos inventario ------------------------------------
+        etiqueta16 = new JLabel(); 
+        etiqueta16.setVisible(false); 
+        etiqueta16.setText("Inventario");
+        etiqueta16.setFont(new Font("arial",Font.BOLD,22)); 
+        etiqueta16.setBounds(220,10,200,20); 
+        panel.add(etiqueta16); 
+
     }
     public void campos(){
         campo = new JTextField(); 
         campo.setBounds(240, 160, 150, 20); // campo de usuario 
         panel.add(campo); 
 
-        campo2 = new JTextField(); 
+        campo2 = new JPasswordField(); 
         campo2.setBounds(240, 200, 150, 20); // campo de contraseña
         panel.add(campo2); 
 
@@ -257,6 +278,8 @@ public class Ventana extends JFrame{
                campo9.setVisible(true);
                boton5.setVisible(true);
 
+               etiqueta16.setVisible(false);
+
                setSize(600, 400);
                boton4.setBounds(450, 260, 120, 20);
                boton5.setBounds(450, 60, 120, 20);
@@ -296,6 +319,8 @@ public class Ventana extends JFrame{
                campo8.setVisible(false); 
                campo9.setVisible(false);
                boton5.setVisible(false); 
+
+               etiqueta16.setVisible(true);
 
                setSize(700, 400);
                boton4.setBounds(550, 260, 120, 20);
