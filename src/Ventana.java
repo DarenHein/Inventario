@@ -61,7 +61,7 @@ public class Ventana extends JFrame implements Runnable{
     public Ventana(){
         Thread obj = new Thread(this); 
         obj.start();
-        this.setSize(600, 400);
+        this.setSize(300, 450);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -79,19 +79,19 @@ public class Ventana extends JFrame implements Runnable{
     public void etiquetas(){
 
         etiqueta = new JLabel(); 
-        etiqueta.setBounds(190,80, 260, 30);
+        etiqueta.setBounds(30,80, 260, 30);
         etiqueta.setFont(new Font("arial", Font.BOLD,22)); 
         etiqueta.setText("Sistema de Inventario");
         panel.add(etiqueta); 
 
         etiqueta2 = new JLabel(); 
-        etiqueta2.setBounds(120, 160, 120, 20);
+        etiqueta2.setBounds(20, 160, 120, 20);
         etiqueta2.setText("Usuario : ");
         etiqueta2.setFont(new Font("arial",Font.BOLD,17));
         panel.add(etiqueta2); 
 
         etiqueta3 = new JLabel(); 
-        etiqueta3.setBounds(120, 200, 120, 20);
+        etiqueta3.setBounds(20, 200, 120, 20);
         etiqueta3.setText("Contraseña : ");
         etiqueta3.setFont(new Font("arial",Font.BOLD,17));
         panel.add(etiqueta3); 
@@ -165,11 +165,11 @@ public class Ventana extends JFrame implements Runnable{
     }
     public void campos(){
         campo = new JTextField(); 
-        campo.setBounds(240, 160, 150, 20); // campo de usuario 
+        campo.setBounds(120, 160, 150, 20); // campo de usuario 
         panel.add(campo); 
 
         campo2 = new JPasswordField(); 
-        campo2.setBounds(240, 200, 150, 20); // campo de contraseña
+        campo2.setBounds(120, 200, 150, 20); // campo de contraseña
         panel.add(campo2); 
 
         // campos añadir 
@@ -213,7 +213,7 @@ public class Ventana extends JFrame implements Runnable{
     public void botones(){
 
         boton = new JButton(); 
-        boton.setBounds(240, 300, 120, 25);
+        boton.setBounds(100, 300, 120, 25);
         boton.setText("Iniciar");
         boton.addActionListener(new ActionListener() {
 
@@ -228,7 +228,7 @@ public class Ventana extends JFrame implements Runnable{
 
                 } else {
                     if (usuario.equals("Usuario") && paswd.equals("1234")) {
-                        
+                        setSize(600, 400);
                         campo.setVisible(false);// campo usuario
                         campo2.setVisible(false);// campo contraseña
                         etiqueta.setVisible(false);
